@@ -7,7 +7,7 @@ router.get('/test-me', function (req, res) {
     console.log('I am inside the first route handler')
     console.log('The endpoint value is', logger.endpoint)
     console.log('Calling welcome')
-    logger.logging()
+    today.cur()
     res.send('my first ever api!')
 });
 
@@ -16,7 +16,7 @@ router.get('/test-me2', function (req, res) {
     console.log("prints the current date: " + today.printDate())
     console.log("prints the current month: " + today.printMonth())
     console.log("Uranium, week2, day16, the topic for today is nodejs module system ")
-    logger.logging()
+    util.helper()
     res.send('My second ever api!')
 });
 
