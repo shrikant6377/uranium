@@ -7,7 +7,7 @@ router.get('/test-me', function (req, res) {
     console.log('I am inside the first route handler')
     console.log('The endpoint value is', logger.endpoint)
     console.log('Calling welcome')
-    welcome.welcome()
+    logger.logging()
     res.send('my first ever api!')
 });
 
