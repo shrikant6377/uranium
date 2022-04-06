@@ -13,8 +13,8 @@ router.get('/test-me', function (req, res) {
 
 router.get('/test-me2', function (req, res) {
     console.log('I am inside the second route handler')
-    console.cog("prints the current date: " + today.getDate())
-    console.log("prints the current month: " + today.getMonth())
+    console.cog("prints the current date: " + today.printDate())
+    console.log("prints the current month: " + today.printMonth())
     console.log("Uranium, week2, day16, the topic for today is nodejs module system ")
     logger.logging()
     res.send('My second ever api!')
