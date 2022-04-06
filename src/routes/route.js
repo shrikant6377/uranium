@@ -1,5 +1,5 @@
 const express = require('express');
-const logger = require('./logger')
+const logger = require('../../logger./logger.js')
 
 const router = express.Router();
 
@@ -8,7 +8,7 @@ router.get('/test-me', function (req, res) {
     console.log('The endpoint value is', logger.endpoint)
     console.log('Calling log function')
     logger.logging()
-    res.send('My first ever api!')
+    res.send('welcom to my application. I am shrikant and a part of functionup uranium cohort')
 });
 
 router.get('/test-me2', function (req, res) {
