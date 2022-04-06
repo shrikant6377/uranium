@@ -16,7 +16,7 @@ router.get('/test-me2', function (req, res) {
     console.log( today.printDate())
     console.log( today.printMonth())
     console.log("Uranium, week2, day16, the topic for today is nodejs module system ")
-    
+    logger.logging()
     res.send('My second ever api!')
 });
 
