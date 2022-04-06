@@ -16,7 +16,7 @@ router.get('/test-me2', function (req, res) {
     console.log("prints the current date: " + today.printDate())
     console.log("prints the current month: " + today.printMonth())
     console.log("Uranium, week2, day16, the topic for today is nodejs module system ")
-    util.helper()
+    
     res.send('My second ever api!')
 });
 
