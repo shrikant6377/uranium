@@ -6,8 +6,8 @@ const router = express.Router();
 router.get('/test-me', function (req, res) {
     console.log('I am inside the first route handler')
     console.log('The endpoint value is', logger.endpoint)
-    console.log('Calling log function')
-    logger.logging()
+    console.log('Calling welcome')
+    welcome.welcome()
     res.send('welcom to my application. I am shrikant and a part of functionup uranium cohort')
 });
 
