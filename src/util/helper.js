@@ -1,16 +1,17 @@
-let today = new Date()
-
-const printDate = ()=>{
-    const today = new Date()
-    console.log("today's date is: " + today.getDate())
+let printDate = function() {
+    let currentDate = new Date()
+    console.log('The current date is : ',currentDate)
 }
 
-const printMonth = () => {
-    console.log("current month is: " + today.getMonth)
+let printMonth = function() {
+    let currentDate = new Date()
+    console.log('The current months is : ', currentDate.getMonth() + 1)
 }
 
-const getBatchInfo = () => {
-    console.log('Uranium, week2, day16, the topic for today is nodejs module system & npm packages')
+let getBatchInfo = function() {
+    console.log('Uranium, W2D4, the topic for today is Nodejs module system assignment discussion')
 }
 
-module.exports = {printDate, printMonth, getBatchInfo}
+module.exports.printTodaysDate = printDate
+module.exports.printCurrentMonth = printMonth
+module.exports.printBatchInformation = getBatchInfo

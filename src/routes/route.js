@@ -1,40 +1,50 @@
 const express = require('express');
-//const today = require('../util/helper.js')
-const format = require('../validator/formatter.js')
+const loggerModule = require('../logger/logger')
+const helperModule = require('../util/helper')
+const formatterModule = require('../validator/formatter')
+const lodash = require('lodash')
 
 const router = express.Router();
-//problem1
+
 router.get('/test-me', function (req, res) {
-    console.log('Welcome to my application. I am shrikant and part of Functionup uranium.')
-    console.log('the end poit value is' logger.endpoint)
-    console.log('Calling welcome')
-    today.cur()
-    res.send('my first ever api!')
-});
-//problem2
-router.get('/test-me2', function (req, res) {
-    console.log('I am inside the second route handler')
-    console.log("prints the current date: " + today.printDate())
-    console.log("prints the current month: " + today.printMonth())
-    console.log("Uranium, week2, day16, the topic for today is nodejs module system ")
-    
-    res.send('My second ever api!')
-});
-
-//problem3
-router.get('/test-me3', function (req, res) {
-    console.log()
-    res.send('i am shrikant'+'my third api!')
-    format.trimming();
-});
-//problem 4
-router.get('/test-me5', function (req, res) {
+    loggerModule.welcomeMessage()
+    helperModule.printTodaysDate()
+    helperModule.printCurrentMonth()
+    helperModule.printBatchInformation()
+    formatterModule.trimString()
+    formatterModule.changeCaseToUpper()
+    formatterModule.changeCaseToLower()
     res.send('My first ever api!')
 });
 
-router.get('/test-me4', function (req, res) {
-    res.send('My first ever api!')
+router.get('/hello', function (req, res) {
+// Problem a)
+let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+let subArrays = lodash.chunk(months, 3)
+console.log('The result after splitting the months array is ', subArrays)
+
+// Problem b)
+
+let oddNumbers = [1,3,5,7,9,11,13,15,17,19]
+console.log('The last 9 odd numbers in the array are: ', lodash.tail(oddNumbers))
+
+// Problem c)
+let a = [1 , 2, 1, 4]
+let b = [2, 3, 4, 3]
+let c = [6, 1, 5, 10]
+let d = [1, 1, 1]
+let e = [1, 2, 3, 4, 5]
+
+console.log('Final array or unique numbers is : ', lodash.union(a, b, c, d, e))
+
+// Problem d)
+let arrayOfKeyValuePairs = [["horror","The Shining"],["drama","Titanic"],["thriller","Shutter Island"],["fantasy","Pans Labyrinth"]]
+console.log('The object created from arrays is :', lodash.fromPairs(arrayOfKeyValuePairs))
+    res.send('My hello api!')
 });
+
+
+
 
 module.exports = router;
 // adding this comment for no reason
