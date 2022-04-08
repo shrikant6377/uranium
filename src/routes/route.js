@@ -65,6 +65,54 @@ const randomController= require("../controllers/randomController.js")
 //write a post request to accept an element in post request body and add it to the given array and return the new array
 router.post('/test-post3', randomController.addToArray ); //HANDLER/CONTROLLER
 
-
-
+let players =
+   [
+       {
+           "name": "manish",
+           "dob": "1/1/1995",
+           "gender": "male",
+           "city": "jalandhar",
+           "sports": [
+               "swimming"
+           ]
+       },
+       {
+           "name": "gopal",
+           "dob": "1/09/1995",
+           "gender": "male",
+           "city": "delhi",
+           "sports": [
+               "soccer"
+           ],
+       },
+       {
+           "name": "lokesh",
+           "dob": "1/1/1990",
+           "gender": "male",
+           "city": "mumbai",
+           "sports": [
+               "soccer"
+           ],
+       },
+   ]
+ 
+   router.post('/players', function (req, res) {
+ 
+       //LOGIC WILL COME HERE
+       for(let i=0; i<players.length; i++){
+           console.log(req.body.name === players[i].name);
+           if(req.body.name === players[i].name){
+               res.send({msg: "players data alerady exist."})
+               break;
+           } else {
+               players.push(req.body);
+               break;
+           }
+       }
+       res.send(  { data: players , status: true }  )
+   })
+  
 module.exports = router;
+
+
+
