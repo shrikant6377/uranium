@@ -1,7 +1,7 @@
 const { JsonWebTokenError } = require("jsonwebtoken");
 
 const middleware= (req, res, next)=>{
-    let token = req.headers["x-Auth-token"] || rq.headers["x-auth-token"]
+    let token = req.headers["x-Auth-token"] || req.headers["x-auth-token"]
     if(!token){
         return res.send({status: false, mgs: "token is invalid"})
     }
